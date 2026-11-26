@@ -1,0 +1,16 @@
+{"at":0,"actor":"desk","kind":"panel_map","body":{"route_edges":{"east":["A-X","X-E"],"west":["A-X","X-W"],"north":["A-Y","Y-N"]},"signs":{"sign-a":{"place":"A","regions":["text","east","west"],"partial":["text","east","west"],"full_min":38},"sign-x":{"place":"X","regions":["text","arrow"],"partial":["text"],"full_min":41},"sign-y":{"place":"Y","regions":["text","arrow"],"partial":["text","arrow"],"full_min":20}},"required_languages":["zh","en"]}}
+{"at":1,"actor":"sign-a","kind":"screen","body":{"boot":"a1","seq":1,"at":1,"charge":44,"visible":{"text":["换乘","Transfer"],"east":["east"],"west":["west"]},"ghosts":[],"clear_all":true}}
+{"at":1,"actor":"sign-x","kind":"screen","body":{"boot":"x1","seq":1,"at":1,"charge":26,"visible":{"text":["换乘","Transfer"],"arrow":["west","east"]},"ghosts":[],"clear_all":true}}
+{"at":2,"actor":"sign-y","kind":"screen","body":{"boot":"y1","seq":1,"at":2,"charge":45,"visible":{"text":["换乘","Transfer"],"arrow":["north"]},"ghosts":[],"clear_all":true}}
+{"at":3,"actor":"desk","kind":"release","body":{"rev":"day1","valid":[4,100],"routing":{"west":"west","east":"east"},"fallback":["north"]}}
+{"at":4,"actor":"kiosk","kind":"routes","body":{"locale":"en","origin":"A"}}
+{"at":12,"actor":"desk","kind":"release","body":{"rev":"work1","replaces":"day1","valid":[15,52],"routing":{"east":"north","west":"west"},"fallback":["north"]}}
+{"at":13,"actor":"sign-a","kind":"poll","body":{"regions":["text","east","west"]}}
+{"at":15,"actor":"sign-a","kind":"screen","body":{"boot":"a1","seq":2,"at":15,"charge":41,"visible":{"text":["换乘","Transfer"],"east":["north"],"west":["west"]},"ghosts":["east"],"clear_all":false}}
+{"at":16,"actor":"sign-x","kind":"disconnect","body":{}}
+{"at":17,"actor":"desk","kind":"release","body":{"rev":"work2","replaces":"work1","valid":[20,60],"routing":{"east":"closed","west":"west"},"fallback":["north"]}}
+{"at":20,"actor":"kiosk","kind":"routes","body":{"locale":"zh","origin":"A"}}
+{"at":21,"actor":"sign-a","kind":"screen","body":{"boot":"a1","seq":3,"at":19,"charge":29,"visible":{"text":["换乘","Transfer"],"east":["north"],"west":[]},"ghosts":[],"clear_all":true,"work_ref":"work1"}}
+{"at":25,"actor":"worker","kind":"observe","body":{"sign":"sign-a","at":24,"visible":{"text":["换乘","Transfer"],"east":["north"],"west":[]},"ghosts":[],"report":"walk-31"}}
+{"at":26,"actor":"sign-x","kind":"screen","body":{"boot":"x2","seq":1,"at":23,"charge":45,"visible":{"text":["换乘","Transfer"],"arrow":["west"]},"ghosts":[],"clear_all":true}}
+{"at":30,"actor":"kiosk","kind":"routes","body":{"locale":"en","origin":"A","prev":"day1"}}
